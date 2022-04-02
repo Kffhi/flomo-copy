@@ -1,0 +1,15 @@
+$main-color: #30cf79;
+
+@mixin textOverflow($width: 100%, $display: block) {
+    width: $width;
+    display: $display;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+@mixin flexCenter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
