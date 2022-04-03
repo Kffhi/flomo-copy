@@ -1,10 +1,10 @@
 <template>
-    <h1>Just One</h1>
-    <HelloWorld />
+    <TheLayout>
+        <template v-slot:slider> slider</template>
+        <template v-slot:main> main</template>
+    </TheLayout>
 </template>
 
-<script lang="ts" setup>
-import HelloWorld from '@/components/HelloWorld.vue'
-</script>
+<script lang="ts" setup></script>
 
 <style></style>
