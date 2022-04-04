@@ -4,10 +4,23 @@
 
 declare module 'vue' {
     export interface GlobalComponents {
+        AllTags: typeof import('./src/components/AllTags.vue')['default']
         ElButton: typeof import('element-plus/es')['ElButton']
+        ElIcon: typeof import('element-plus/es')['ElIcon']
+        ElInput: typeof import('element-plus/es')['ElInput']
         ElRow: typeof import('element-plus/es')['ElRow']
         HelloWorld: typeof import('./src/components/HelloWorld.vue')['default']
+        SearchHeader: typeof import('./src/components/SearchHeader.vue')['default']
+        SliderBar: typeof import('./src/components/SliderBar.vue')['default']
+        SliderBarUl: typeof import('./src/components/SliderBarUl.vue')['default']
+        SliderTags: typeof import('./src/components/SliderTags.vue')['default']
+        TagItem: typeof import('./src/components/TagItem.vue')['default']
+        TheEditor: typeof import('./src/components/TheEditor.vue')['default']
         TheLayout: typeof import('./src/components/TheLayout.vue')['default']
+        TheMemosWrap: typeof import('./src/components/TheMemosWrap.vue')['default']
+        TheStat: typeof import('./src/components/TheStat.vue')['default']
+        TopTags: typeof import('./src/components/TopTags.vue')['default']
+        UserHeader: typeof import('./src/components/UserHeader.vue')['default']
     }
 }
 

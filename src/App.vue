@@ -1,10 +1,18 @@
 <template>
-    <TheLayout>
-        <template v-slot:slider> slider</template>
-        <template v-slot:main> main</template>
-    </TheLayout>
+    <the-layout>
+        <template v-slot:slider>
+            <user-header></user-header>
+            <the-stat></the-stat>
+            <slider-bar-ul></slider-bar-ul>
+            <top-tags></top-tags>
+            <all-tags></all-tags>
+        </template>
+        <template v-slot:main>
+            <search-header></search-header>
+            <the-editor></the-editor>
+            <the-memos-wrap></the-memos-wrap>
+        </template>
+    </the-layout>
 </template>
 
 <script lang="ts" setup></script>
-
-<style></style>

@@ -40,6 +40,9 @@
             width: 640px;
             height: 100%;
             overflow: hidden;
+            @include flex(flex-start, flex-start);
+            flex-wrap: wrap;
+            flex-direction: column;
         }
     }
 }

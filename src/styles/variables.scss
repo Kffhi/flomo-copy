@@ -1,5 +1,13 @@
 $main-color: #30cf79;
-$background-main-color: #f2f2f2;
+
+$background-main-color: #fafafa;
+$background-hover-color: #efefef;
+
+
+$text-main-color: #9d9d9d;
+$text-glod-color: #ded1b7;
+
+$white-color: #ffffff;
 
 @mixin textOverflow($width: 100%, $display: block) {
     width: $width;
