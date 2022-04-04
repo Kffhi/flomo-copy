@@ -25,7 +25,7 @@ const props = defineProps({
 
     h3 {
         font-size: 12px;
-        color: $text-glod-color;
+        color: $text-gold-color;
         padding-left: 16px;
         margin: 20px 0 0;
     }

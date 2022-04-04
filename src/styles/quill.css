@@ -1,0 +1,16 @@
+@import 'quill/dist/quill.snow.css';
+
+.ql-container.ql-snow {
+    border: none;
+}
+
+.ql-toolbar.ql-snow {
+    border: none;
+    padding: 0 8px;
+}
+
+.ql-editor {
+    min-height: 90px;
+    line-height: 1.5;
+}
+
