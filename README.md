@@ -1,27 +1,78 @@
-# Vue 3 + Typescript + Vite
+# Flomo
 
-This template should help get you started developing with Vue 3 and Typescript in Vite.
+大约1:1复刻的[Flomo](https://flomoapp.com/) 网页版的单纯练习项目，**禁止任何商业用途**，如果对产品本身有兴趣请访问[Flomo官网](https://flomoapp.com/) 了解更多信息
 
-## Recommended IDE Setup
+## 快速开始
 
-[VSCode](https://code.visualstudio.com/) + [Vetur](https://marketplace.visualstudio.com/items?itemName=octref.vetur). Make sure to enable `vetur.experimental.templateInterpolationService` in settings!
+本项目为前端代码地址，服务端请访问[flomo-server](https://github.com/Kffhi/flomo-server) 查看
 
-### If Using `<script setup>`
+### 线上试用
 
-[`<script setup>`](https://github.com/vuejs/rfcs/pull/227) is a feature that is currently in RFC stage. To get proper IDE support for the syntax, use [Volar](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar) instead of Vetur (and disable Vetur).
+[线上地址]()不保证任何信息安全及校验，且数据会被定期清除，仅做体验试用
 
-## Type Support For `.vue` Imports in TS
+### 本地部署
 
-Since TypeScript cannot handle type information for `.vue` imports, they are shimmed to be a generic Vue component type by default. In most cases this is fine if you don't really care about component prop types outside of templates. However, if you wish to get actual prop types in `.vue` imports (for example to get props validation when using manual `h(...)` calls), you can use the following:
+#### 本项目（flomo-copy）
 
-### If Using Volar
+```shell
+git clone git@github.com:Kffhi/flomo-copy.git
+cd flomo-copy
+npm install
+npm run dev
+```
 
-Run `Volar: Switch TS Plugin on/off` from VSCode command palette.
+#### 后端项目（flomo-server）
 
-### If Using Vetur
+```shell l
+git clone git@github.com:Kffhi/flomo-server.git
+cd flomo-server
+npm run start
+```
 
-1. Install and add `@vuedx/typescript-plugin-vue` to the [plugins section](https://www.typescriptlang.org/tsconfig#plugins) in `tsconfig.json`
-2. Delete `src/shims-vue.d.ts` as it is no longer needed to provide module info to Typescript
-3. Open `src/main.ts` in VSCode
-4. Open the VSCode command palette
-5. Search and run "Select TypeScript version" -> "Use workspace version"
+## 功能说明
+
+### 编辑器
+
+### 标签
+
+### 热力图
+
+### feature list
+
+- [ ] 基础布局、样式及交互
+- [ ] 基础富文本编辑功能
+- [ ] 键盘快捷键支持
+- [ ] 标签输入联想
+- [ ] Memos管理
+- [ ] 热力图数据展示
+- [ ] 增删标签
+- [ ] 标签图标
+- [ ] 标签重命名
+- [ ] 多级标签
+- [ ] H5适配
+- [ ] 单元测试
+- [ ] 打包及部署
+- [ ] ...
+
+## 部分技术方案实现
+
+### 编辑器
+
+### 富文本格式
+
+### 数据存储
+
+### 热力图
+
+## 单元测试
+
+## 相关项目
+
+Vue3+TS+Vite+Pinia
+
+Element Plus：https://element-plus.org/zh-CN/
+
+Quill：https://quilljs.com/
+
+heatmap：https://github.com/ccccai/heat-map
+
