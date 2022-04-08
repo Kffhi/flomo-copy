@@ -8,8 +8,8 @@
                 <button class="ql-italic"></button>
                 <button class="ql-underline"></button>
                 <button class="ql-strike"></button>
-                <button class="ql-list" value="ordered" type="button"></button>
-                <button class="ql-list" value="bullet" type="button"></button>
+                <button class="ql-list" type="button" value="ordered"></button>
+                <button class="ql-list" type="button" value="bullet"></button>
                 <button class="ql-image" type="button"></button>
             </div>
             <el-button class="editorSubmitBtn" type="success" @click="handleSubmit">发送</el-button>
@@ -17,9 +17,10 @@
     </div>
 </template>
 
-<script setup lang="ts">
+<script lang="ts" setup>
 import { onMounted } from 'vue'
 import Delta from 'quill'
+import request from '@/utils/axios'
 import editor from '@/utils/editor'
 
 let Quill: any
@@ -28,9 +29,10 @@ onMounted(() => {
     Quill = editor.initEditor()
 })
 
-const handleSubmit = () => {
+const handleSubmit = async () => {
     const content: Delta = Quill.getContents()
-    console.log(content)
+    const tags = await request.get('/tag/getAll')
+    console.log(content, tags)
 }
 </script>
 

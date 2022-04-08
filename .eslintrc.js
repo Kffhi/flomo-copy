@@ -34,6 +34,7 @@ module.exports = {
         '@typescript-eslint/no-unused-vars': 'warn',
         'no-shadow': 'off',
         '@typescript-eslint/no-shadow': 'error', // 以上，解决TS的enum报错
-        'import/prefer-default-export': 'off' //
+        'import/prefer-default-export': 'off', //
+        'prefer-promise-reject-errors': 'off' // 禁止reject只能用Error对象做返回
     }
 }
