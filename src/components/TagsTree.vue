@@ -2,13 +2,36 @@
     <div class="tags-tree">
         <h3>全部标签</h3>
         <div class="treeWrap">
-            <el-tree :data="tags" :props="defaultProps" @node-click="handleNodeClick" />
+            <el-tree :data="tags" :props="defaultProps" highlight-current @node-click="handleNodeClick">
+                <template #default="{ node, data }">
+                    <span class="tagsNode">
+                        <div class="nodeLeft">
+                            <span class="tagIcon">{{ data.icon }}</span>
+                            <span>{{ node.label }}</span>
+                        </div>
+                        <div class="nodeRight">
+                            <el-dropdown>
+                                <el-icon :size="18" color="#9d9d9d">
+                                    <more-filled />
+                                </el-icon>
+                                <template #dropdown>
+                                    <el-dropdown-menu>
+                                        <el-dropdown-item>重命名</el-dropdown-item>
+                                        <el-dropdown-item>更改图标</el-dropdown-item>
+                                    </el-dropdown-menu>
+                                </template>
+                            </el-dropdown>
+                        </div>
+                    </span>
+                </template>
+            </el-tree>
         </div>
         <div>{{ currTag.value }}</div>
     </div>
 </template>
 
 <script setup lang="ts">
+import { MoreFilled } from '@element-plus/icons-vue'
 import { onMounted } from 'vue'
 import { storeToRefs } from 'pinia'
 import { useStore } from '@/stores/tags'
@@ -43,8 +66,65 @@ const handleNodeClick = (node: TagsNode) => {
         margin: 20px 0 0;
     }
 
-    .tags {
+    .treeWrap {
+        width: 100%;
         margin: 8px 0 18px;
+
+        ::v-deep .el-tree {
+            background-color: $background-main-color;
+        }
+
+        ::v-deep .el-tree-node__content {
+            width: 100%;
+            height: 36px;
+            @include flex();
+            font-size: 16px;
+            cursor: pointer;
+            color: $text-main-color;
+
+            &:hover {
+                background-color: $background-hover-color;
+                border-radius: 5px;
+
+                & .nodeRight .el-icon {
+                    display: inline;
+                }
+            }
+
+            & > .el-icon {
+                display: none;
+            }
+        }
+
+        ::v-deep .el-tree--highlight-current .el-tree-node.is-current > .el-tree-node__content {
+            background-color: $main-color;
+            border-radius: 5px;
+
+            & .nodeRight .el-icon {
+                display: inline;
+            }
+        }
+
+        .tagsNode {
+            padding: 0 10px 0 17px;
+            @include flex(space-between);
+            width: 100%;
+            height: 100%;
+
+            .tagIcon {
+                margin-right: 10px;
+            }
+
+            .nodeRight {
+                width: 18px;
+                height: 100%;
+                @include flex(center);
+
+                .el-icon {
+                    display: none;
+                }
+            }
+        }
     }
 }
 </style>

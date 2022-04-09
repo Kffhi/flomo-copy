@@ -1,3 +1,10 @@
-export interface TagsNode {}
+export interface TagsNode {
+    id: string
+    pid: string
+    value: string
+    sortId: number
+    icon: string
+    children: TagsNode[]
+}
 
 export type TagsTreeType = TagsNode[]
