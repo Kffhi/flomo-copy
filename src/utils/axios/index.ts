@@ -62,11 +62,11 @@ export class Request {
                 'Content-Type': 'application/json; charset=utf-8'
             },
             transformRequest: [obj => qs.stringify(obj)],
-            transformResponse: [
-                (data: AxiosResponse) => {
-                    return data
-                }
-            ],
+            // transformResponse: [
+            //     (data: AxiosResponse) => {
+            //         return data
+            //     }
+            // ],
             paramsSerializer(params: any) {
                 return qs.stringify(params, { arrayFormat: 'brackets' })
             },
@@ -110,7 +110,7 @@ export class Request {
                 if (this.successCode.indexOf(response.status) === -1) {
                     return Promise.reject(new Error(response.data || 'Error'))
                 }
-                return JSON.parse(response.data)
+                return response.data
             },
             (error: AxiosError) => {
                 return Promise.reject(error)
