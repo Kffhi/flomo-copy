@@ -4,8 +4,7 @@
             <user-header></user-header>
             <the-stat></the-stat>
             <slider-bar-ul></slider-bar-ul>
-            <top-tags></top-tags>
-            <all-tags></all-tags>
+            <tags-tree></tags-tree>
         </template>
         <template v-slot:main>
             <search-header></search-header>

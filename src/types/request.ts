@@ -5,7 +5,7 @@ import { AxiosResponse } from 'axios'
 
 export interface MyResponseType<T> {
     code: number
-    data: T | null
+    data: T
     message: string
     status: boolean
 }
