@@ -1,12 +1,12 @@
 <template>
     <ul class="sliderBarUl">
-        <li class="selected">
+        <li :class="{ selected: activeMenu === ACTIVE_MENU.MEMO }" @click="handleClickMenu(ACTIVE_MENU.MEMO)">
             <el-icon>
                 <grid />
             </el-icon>
             Memo
         </li>
-        <li>
+        <li :class="{ selected: activeMenu === ACTIVE_MENU.HANG_OUT }" @click="handleClickMenu(ACTIVE_MENU.HANG_OUT)">
             <el-icon>
                 <wind-power />
             </el-icon>
@@ -17,6 +17,20 @@
 
 <script setup lang="ts">
 import { Grid, WindPower } from '@element-plus/icons-vue'
+import { storeToRefs } from 'pinia'
+import { useGlobalStore } from '@/stores'
+import { useTagStore } from '@/stores/tags'
+import { ACTIVE_MENU } from '@/utils/constants'
+import { ACTIVE_MENU_TYPE } from '@/types'
+
+const globalStore = useGlobalStore()
+const tagsStore = useTagStore()
+const { activeMenu } = storeToRefs(globalStore)
+
+const handleClickMenu = (id: ACTIVE_MENU_TYPE) => {
+    globalStore.setActiveMenu(id)
+    tagsStore.setCurrTag(null) // 清除当前选中的tag
+}
 </script>
 
 <style lang="scss" scoped>

@@ -2,7 +2,7 @@
     <div class="tags-tree">
         <h3>全部标签</h3>
         <div class="treeWrap">
-            <el-tree :data="tags" :props="defaultProps" highlight-current @node-click="handleNodeClick">
+            <el-tree ref="treeRef" node-key="id" :data="tags" :props="defaultProps" highlight-current @node-click="handleNodeClick">
                 <template #default="{ node, data }">
                     <span class="tagsNode">
                         <div class="nodeLeft">
@@ -26,32 +26,49 @@
                 </template>
             </el-tree>
         </div>
-        <div>{{ currTag.value }}</div>
     </div>
 </template>
 
 <script setup lang="ts">
 import { MoreFilled } from '@element-plus/icons-vue'
-import { onMounted } from 'vue'
+import { onMounted, watch, ref } from 'vue'
 import { storeToRefs } from 'pinia'
-import { useStore } from '@/stores/tags'
+import { ElTree } from 'element-plus'
+import { useTagStore } from '@/stores/tags'
+import { useGlobalStore } from '@/stores'
 import { TagsNode } from '@/types/tags'
 
-const tagsStore = useStore()
+type EleForm = InstanceType<typeof ElTree>
+
+const tagsStore = useTagStore()
+const globalStore = useGlobalStore()
 
 const { tags, currTag } = storeToRefs(tagsStore)
 const defaultProps = {
     children: 'children',
     label: 'value'
 }
+const treeRef = ref(null as EleForm | null)
 
 onMounted(async () => {
     await tagsStore.getTagsTree()
     console.log('tags', tags.value)
 })
 
+watch(
+    () => tagsStore.currTag,
+    () => {
+        console.log('currTag', currTag.value)
+        if (!currTag.value) {
+            treeRef.value?.setCurrentKey(null)
+        }
+    }
+)
+
 const handleNodeClick = (node: TagsNode) => {
     tagsStore.setCurrTag(node)
+    globalStore.setActiveMenu('') // 清除当前的菜单
+    // TODO: Memos需要更新
 }
 </script>
 

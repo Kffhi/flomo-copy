@@ -8,3 +8,5 @@ export interface TagsNode {
 }
 
 export type TagsTreeType = TagsNode[]
+
+export type currTag = TagsNode | null

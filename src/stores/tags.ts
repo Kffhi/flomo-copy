@@ -1,18 +1,18 @@
 import { defineStore } from 'pinia'
 import request from '@/utils/axios'
-import { TagsNode, TagsTreeType } from '@/types/tags'
+import { TagsTreeType, currTag } from '@/types/tags'
 import { MyResponseType } from '@/types/request'
 
 interface stateType {
     tags: TagsTreeType
-    currTag: TagsNode
+    currTag: currTag
 }
 
-export const useStore = defineStore('tagsStore', {
+export const useTagStore = defineStore('tagsStore', {
     state: (): stateType => {
         return {
             tags: [],
-            currTag: {}
+            currTag: null
         }
     },
     actions: {
@@ -21,7 +21,7 @@ export const useStore = defineStore('tagsStore', {
             this.tags = res.data
         },
         // 设置当前选中的tag
-        setCurrTag(tag: TagsNode) {
+        setCurrTag(tag: currTag) {
             this.currTag = tag
         }
     }

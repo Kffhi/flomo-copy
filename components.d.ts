@@ -12,7 +12,6 @@ declare module 'vue' {
         ElInput: typeof import('element-plus/es')['ElInput']
         ElRow: typeof import('element-plus/es')['ElRow']
         ElTree: typeof import('element-plus/es')['ElTree']
-        HelloWorld: typeof import('./src/components/HelloWorld.vue')['default']
         SearchHeader: typeof import('./src/components/SearchHeader.vue')['default']
         SliderBar: typeof import('./src/components/SliderBar.vue')['default']
         SliderBarUl: typeof import('./src/components/SliderBarUl.vue')['default']

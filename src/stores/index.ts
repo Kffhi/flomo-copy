@@ -1,12 +1,14 @@
 import { defineStore } from 'pinia'
+import { ACTIVE_MENU } from '@/utils/constants'
+import { ACTIVE_MENU_TYPE } from '@/types'
 
-export const useStore = defineStore('globalStore', {
+export const useGlobalStore = defineStore('globalStore', {
     state: () => {
-        return { count: 0 }
+        return { activeMenu: ACTIVE_MENU.MEMO }
     },
     actions: {
-        increment() {
-            this.count += 1
+        setActiveMenu(id: ACTIVE_MENU_TYPE) {
+            this.activeMenu = id
         }
     }
 })
