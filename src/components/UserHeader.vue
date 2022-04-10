@@ -1,6 +1,6 @@
 <template>
     <div class="userHeader">
-        <div class="left">Kffhi</div>
+        <div class="left">{{ userInfo.userName }}</div>
         <div class="iconWrap">
             <el-icon :size="18" color="#333">
                 <bell />
@@ -14,6 +14,17 @@
 
 <script setup lang="ts">
 import { Bell, Setting } from '@element-plus/icons-vue'
+import { storeToRefs } from 'pinia'
+import { onMounted } from 'vue'
+import { useStateStore } from '@/stores/state'
+
+const stateStore = useStateStore()
+
+const { userInfo } = storeToRefs(stateStore)
+
+onMounted(() => {
+    stateStore.getUserinfo()
+})
 </script>
 
 <style lang="scss" scoped>
