@@ -20,7 +20,7 @@ export const useStateStore = defineStore('stateStore', {
     },
     actions: {
         async getUserinfo() {
-            const res: MyResponseType<USERINFO_TYPE> = await request.get<USERINFO_TYPE>('/state/userinfo')
+            const res: MyResponseType<USERINFO_TYPE> = await request.get<USERINFO_TYPE>('/state/userInfo')
             this.userInfo = res.data
         }
     }
