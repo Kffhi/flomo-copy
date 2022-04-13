@@ -7,3 +7,14 @@ export interface USERINFO_TYPE {
     password?: string
     registerTime?: number
 }
+
+export interface dayItemType {
+    date: string
+    times: number
+    isToday: boolean
+}
+
+export interface monthItemType {
+    value: number
+    column: number
+}
