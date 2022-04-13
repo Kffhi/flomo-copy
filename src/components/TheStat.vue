@@ -14,7 +14,9 @@
                 <div class="key">DAY</div>
             </div>
         </div>
-        <div class="heatMap">heatmap</div>
+        <div class="heatMapWrap">
+            <heat-map></heat-map>
+        </div>
     </div>
 </template>
 
@@ -57,7 +59,7 @@ const { userInfo } = storeToRefs(stateStore)
         }
     }
 
-    .heatMap {
+    .heatMapWrap {
         width: 100%;
         padding: 0 16px;
         margin-top: 10px;
