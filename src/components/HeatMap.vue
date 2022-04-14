@@ -1,7 +1,7 @@
 <template>
     <div class="heatMap">
         <div class="dayBox">
-            <el-tooltip effect="dark" :content="`${day.date} ${day.times}次提交`" :show-after="200" placement="top" v-for="day in dayList" :key="day.date">
+            <el-tooltip effect="dark" :content="`${day.date} ${day.times}次提交`" :show-after="50" placement="top" v-for="day in dayList" :key="day.date">
                 <div class="dayItem" :class="{ today: day.isToday, lightGreen: 0 < day.times && day.times < 8, darkGreen: day.times >= 8 }"></div>
             </el-tooltip>
         </div>
