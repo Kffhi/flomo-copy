@@ -18,3 +18,5 @@ export interface monthItemType {
     value: number
     column: number
 }
+
+export type dayMapType = Map<string, dayItemType>

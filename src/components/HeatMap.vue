@@ -2,7 +2,7 @@
     <div class="heatMap">
         <div class="dayBox">
             <el-tooltip effect="dark" :content="`${day.date} ${day.times}次提交`" :show-after="200" placement="top" v-for="day in dayList" :key="day.date">
-                <div class="dayItem" :class="{ today: day.isToday, lightGreen: 0 < day.times < 10, dark_green: day.times >= 10 }"></div>
+                <div class="dayItem" :class="{ today: day.isToday, lightGreen: 0 < day.times && day.times < 8, darkGreen: day.times >= 8 }"></div>
             </el-tooltip>
         </div>
         <div class="monthBox">
@@ -12,9 +12,26 @@
 </template>
 
 <script setup lang="ts">
+import { onMounted, reactive } from 'vue'
+import { storeToRefs } from 'pinia'
 import { getDateList } from '@/utils/date'
+import { useStateStore } from '@/stores/state'
+import { completeDayTimes } from '@/businessHelper/state'
 
-const { dayList, monthList } = getDateList()
+const stateStore = useStateStore()
+
+const { dayList: day, monthList: month } = getDateList()
+const dayList = reactive(day) // 日期列表
+const monthList = reactive(month) // 月份列表
+const { heatMap } = storeToRefs(stateStore) // 后端热力数据
+
+onMounted(async () => {
+    // 获取热力数据
+    await stateStore.getHeatMap()
+    // 将热力数据中的次数记录至dayList
+    completeDayTimes(dayList, heatMap.value)
+    console.log('dayList', dayList)
+})
 </script>
 
 <style lang="scss" scoped>
@@ -38,9 +55,18 @@ const { dayList, monthList } = getDateList()
             border: 1px solid transparent;
             border-radius: 2px;
             cursor: pointer;
+            font-size: 12px;
 
             &.today {
-                border: 1px solid #55bb8e;
+                border: 1px solid $heat-border-color;
+            }
+
+            &.lightGreen {
+                background-color: $heat-lightGreen-color;
+            }
+
+            &.darkGreen {
+                background-color: $heat-darkGreen-color;
             }
         }
     }
