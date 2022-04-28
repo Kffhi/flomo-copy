@@ -1,39 +1,16 @@
 <template>
-    <div class="theEditor">
-        <div class="editor">
-            <div class="editorContainer"></div>
-            <div class="editorToolbar">
-                <el-button class="tagBtn" type="text">#</el-button>
-                <button class="ql-bold"></button>
-                <button class="ql-italic"></button>
-                <button class="ql-underline"></button>
-                <button class="ql-strike"></button>
-                <button class="ql-list" type="button" value="ordered"></button>
-                <button class="ql-list" type="button" value="bullet"></button>
-                <button class="ql-image" type="button"></button>
-            </div>
-            <el-button class="editorSubmitBtn" type="success" @click="handleSubmit">发送</el-button>
-        </div>
-    </div>
+    <div class="theEditor"></div>
 </template>
 
 <script lang="ts" setup>
 import { onMounted } from 'vue'
-import Delta from 'quill'
 import request from '@/utils/axios'
-import editor from '@/utils/editor'
 
 let Quill: any
 
 onMounted(() => {
-    Quill = editor.initEditor()
+    console.log('编辑器加载')
 })
-
-const handleSubmit = async () => {
-    const content: Delta = Quill.getContents()
-    const tags = await request.get('/tag/getAll')
-    console.log(content, tags)
-}
 </script>
 
 <style lang="scss" scoped>
