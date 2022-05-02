@@ -4,6 +4,7 @@
 
 declare module 'vue' {
     export interface GlobalComponents {
+        Editor: typeof import('./src/components/editor/index.vue')['default']
         ElButton: typeof import('element-plus/es')['ElButton']
         ElDropdown: typeof import('element-plus/es')['ElDropdown']
         ElDropdownItem: typeof import('element-plus/es')['ElDropdownItem']
@@ -18,7 +19,8 @@ declare module 'vue' {
         SliderBar: typeof import('./src/components/SliderBar.vue')['default']
         SliderBarUl: typeof import('./src/components/SliderBarUl.vue')['default']
         TagsTree: typeof import('./src/components/TagsTree.vue')['default']
-        TheEditor: typeof import('./src/components/TheEditor.vue')['default']
+        TheEditor: typeof import('./src/components/editor/TheEditor.vue')['default']
+        TheEditorWrap: typeof import('./src/components/TheEditorWrap.vue')['default']
         TheLayout: typeof import('./src/components/TheLayout.vue')['default']
         TheMemosWrap: typeof import('./src/components/TheMemosWrap.vue')['default']
         TheStat: typeof import('./src/components/TheStat.vue')['default']

@@ -8,7 +8,7 @@
         </template>
         <template v-slot:main>
             <search-header></search-header>
-            <the-editor></the-editor>
+            <the-editor-wrap></the-editor-wrap>
             <the-memos-wrap></the-memos-wrap>
         </template>
     </the-layout>
