@@ -1,12 +1,27 @@
 <template>
     <div class="theEditor">
-        <div class="editorContainer"></div>
+        <div class="editorContainer">
+            <Slate :value="textValue">
+                <Editable placeholder="Enter some plain text..." autoCorrect="on" :autoFocus="false"></Editable>
+            </Slate>
+        </div>
         <div class="editorToolbar"></div>
         <div class="editorSubmitBtn"></div>
     </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { ref } from 'vue'
+import { Slate, Editable } from '@/packages/slate-vue'
+
+const initialValue = JSON.stringify([
+    {
+        children: [{ text: 'This is editable plain text, just like a <textarea>!' }]
+    }
+])
+
+const textValue = ref(initialValue)
+</script>
 
 <style lang="scss" scoped>
 .theEditor {

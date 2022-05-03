@@ -30,7 +30,6 @@ onMounted(async () => {
     await stateStore.getHeatMap()
     // 将热力数据中的次数记录至dayList
     completeDayTimes(dayList, heatMap.value)
-    console.log('dayList', dayList)
 })
 </script>
 

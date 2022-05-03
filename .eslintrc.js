@@ -26,7 +26,7 @@ module.exports = {
         }
     },
     rules: {
-        indent: ['error', 4],
+        indent: ['error', 4, { SwitchCase: 1 }],
         'import/extensions': 'off',
         'import/no-unresolved': 'off', // import + ts解析报错
         'no-param-reassign': 'off', // 参数重分配
@@ -35,6 +35,10 @@ module.exports = {
         'no-shadow': 'off',
         '@typescript-eslint/no-shadow': 'error', // 以上，解决TS的enum报错
         'import/prefer-default-export': 'off', //
-        'prefer-promise-reject-errors': 'off' // 禁止reject只能用Error对象做返回
+        'prefer-promise-reject-errors': 'off', // 禁止reject只能用Error对象做返回
+        'no-underscore-dangle': 'off',
+        'no-continue': 'off',
+        'prefer-destructuring': 'off',
+        'no-restricted-syntax': 'off'
     }
 }

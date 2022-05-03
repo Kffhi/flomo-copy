@@ -6,12 +6,10 @@
 
 <script lang="ts" setup>
 import { onMounted } from 'vue'
-import request from '@/utils/axios'
-
-let Quill: any
+// import request from '@/utils/axios'
 
 onMounted(() => {
-    console.log('编辑器加载')
+    // console.log('编辑器加载')
 })
 </script>
 

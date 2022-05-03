@@ -124,7 +124,7 @@ export class Request {
             if (v.url === `${config.url}/${JSON.stringify(config.data)}&request_type=${config.method}`) {
                 v.cancel()
                 this.pending.splice(index, 1)
-                console.log('请求重复', this.pending)
+                // console.log('请求重复', this.pending)
             }
             return v
         })

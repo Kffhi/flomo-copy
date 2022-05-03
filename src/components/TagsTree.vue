@@ -52,13 +52,11 @@ const treeRef = ref(null as EleForm | null)
 
 onMounted(async () => {
     await tagsStore.getTagsTree()
-    console.log('tags', tags.value)
 })
 
 watch(
     () => tagsStore.currTag,
     () => {
-        console.log('currTag', currTag.value)
         if (!currTag.value) {
             treeRef.value?.setCurrentKey(null)
         }
