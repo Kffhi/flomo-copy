@@ -1,6 +1,7 @@
 import { defineComponent, PropType, inject } from 'vue'
 import { Text, Editor, Path, Node } from 'slate'
 import { useEditor } from '../plugins'
+import { VueEditor } from '../../slate-vue-shared'
 
 interface ZeroWidthStringProps {
     length?: number

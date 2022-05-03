@@ -21,8 +21,8 @@ import {
     NODE_TO_INDEX,
     NODE_TO_KEY,
     NODE_TO_PARENT
-} from '../utils/index'
-import { VueEditorType } from '../types/index'
+} from '../utils'
+import { VueEditorType } from '../types'
 
 export const VueEditor = {
     /**

@@ -1,7 +1,7 @@
 import { Node, Ancestor, Editor } from 'slate'
 import { VNode } from 'vue'
 import { Key } from './key'
-import { VueEditorType } from '@/packages/slate-vue-shared'
+import { VueEditorType } from '../index'
 
 /**
  * Two weak maps that allow us rebuild a path given a node. They are populated

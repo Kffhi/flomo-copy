@@ -1,6 +1,6 @@
 import { Editor, Operation, Node, Path, Text, Descendant, NodeEntry, Transforms as SlateTransforms, Location, Element } from 'slate'
-import { NODE_TO_KEY } from '../utils/index'
-import { VueEditorType } from '@/packages/slate-vue-shared'
+import { NODE_TO_KEY } from '../utils'
+import { VueEditorType } from '../index'
 
 export const getChildren = (node: Node): any => {
     return Editor.isEditor(node) ? (node as VueEditorType)._state : (node as Element).children

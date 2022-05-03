@@ -1,9 +1,9 @@
 import { Editor, Node, Path, Operation, Transforms, Range } from 'slate'
 import { VueEditor } from './vue-editor'
-import { Key, isDOMText, getPlainText, EDITOR_TO_ON_CHANGE, NODE_TO_KEY } from '../utils/index'
+import { Key, isDOMText, getPlainText, EDITOR_TO_ON_CHANGE, NODE_TO_KEY } from '../utils'
 import { vueRuntime } from './vue-runtime'
 import { transform } from './runtime-util'
-import { VueEditorType } from '@/packages/slate-vue-shared'
+import { VueEditorType } from '../index'
 
 /**
  * `withReact` adds React and DOM specific behaviors to the editor.

@@ -1,9 +1,7 @@
 <template>
     <div class="theEditor">
         <div class="editorContainer">
-            <Slate :value="textValue">
-                <Editable placeholder="Enter some plain text..." autoCorrect="on" :autoFocus="false"></Editable>
-            </Slate>
+            <Slate :value="textValue"></Slate>
         </div>
         <div class="editorToolbar"></div>
         <div class="editorSubmitBtn"></div>
@@ -12,7 +10,7 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import { Slate, Editable } from '@/packages/slate-vue'
+import { Slate } from '@/packages/slate-vue3'
 
 const initialValue = JSON.stringify([
     {

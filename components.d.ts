@@ -3,29 +3,29 @@
 // Read more: https://github.com/vuejs/vue-next/pull/3399
 
 declare module 'vue' {
-    export interface GlobalComponents {
-        Editor: typeof import('./src/components/editor/index.vue')['default']
-        ElButton: typeof import('element-plus/es')['ElButton']
-        ElDropdown: typeof import('element-plus/es')['ElDropdown']
-        ElDropdownItem: typeof import('element-plus/es')['ElDropdownItem']
-        ElDropdownMenu: typeof import('element-plus/es')['ElDropdownMenu']
-        ElIcon: typeof import('element-plus/es')['ElIcon']
-        ElInput: typeof import('element-plus/es')['ElInput']
-        ElRow: typeof import('element-plus/es')['ElRow']
-        ElTooltip: typeof import('element-plus/es')['ElTooltip']
-        ElTree: typeof import('element-plus/es')['ElTree']
-        HeatMap: typeof import('./src/components/HeatMap.vue')['default']
-        SearchHeader: typeof import('./src/components/SearchHeader.vue')['default']
-        SliderBar: typeof import('./src/components/SliderBar.vue')['default']
-        SliderBarUl: typeof import('./src/components/SliderBarUl.vue')['default']
-        TagsTree: typeof import('./src/components/TagsTree.vue')['default']
-        TheEditor: typeof import('./src/components/editor/TheEditor.vue')['default']
-        TheEditorWrap: typeof import('./src/components/TheEditorWrap.vue')['default']
-        TheLayout: typeof import('./src/components/TheLayout.vue')['default']
-        TheMemosWrap: typeof import('./src/components/TheMemosWrap.vue')['default']
-        TheStat: typeof import('./src/components/TheStat.vue')['default']
-        UserHeader: typeof import('./src/components/UserHeader.vue')['default']
-    }
+  export interface GlobalComponents {
+    Editor: typeof import('./src/components/editor/index.vue')['default']
+    ElButton: typeof import('element-plus/es')['ElButton']
+    ElDropdown: typeof import('element-plus/es')['ElDropdown']
+    ElDropdownItem: typeof import('element-plus/es')['ElDropdownItem']
+    ElDropdownMenu: typeof import('element-plus/es')['ElDropdownMenu']
+    ElIcon: typeof import('element-plus/es')['ElIcon']
+    ElInput: typeof import('element-plus/es')['ElInput']
+    ElRow: typeof import('element-plus/es')['ElRow']
+    ElTooltip: typeof import('element-plus/es')['ElTooltip']
+    ElTree: typeof import('element-plus/es')['ElTree']
+    HeatMap: typeof import('./src/components/HeatMap.vue')['default']
+    SearchHeader: typeof import('./src/components/SearchHeader.vue')['default']
+    SliderBar: typeof import('./src/components/SliderBar.vue')['default']
+    SliderBarUl: typeof import('./src/components/SliderBarUl.vue')['default']
+    TagsTree: typeof import('./src/components/TagsTree.vue')['default']
+    TheEditor: typeof import('./src/components/editor/TheEditor.vue')['default']
+    TheEditorWrap: typeof import('./src/components/TheEditorWrap.vue')['default']
+    TheLayout: typeof import('./src/components/TheLayout.vue')['default']
+    TheMemosWrap: typeof import('./src/components/TheMemosWrap.vue')['default']
+    TheStat: typeof import('./src/components/TheStat.vue')['default']
+    UserHeader: typeof import('./src/components/UserHeader.vue')['default']
+  }
 }
 
-export {}
+export { }
